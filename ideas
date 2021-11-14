@@ -1,0 +1,78 @@
+rpi shield
+-indicates script started and active, wifi connected
+-does rpi 4 have an ap mode?
+--button to activate ap and led to indicate broadcasting
+
+
+achievable features:
+
+-battery voltage sensor
+--analog pin measure script
+--arduino sends data back at interval (1 min)
+
+X-encoders
+X--either response to motor messages or sent out at interval (50ms?)
+
+-ultrasonic sensors
+--attiny script to ping sensors, send/receive data over spi (i2c if we have to)
+--arduino routine to get sensor data at 50ms intervals to send to rpi
+
+-arduino script
+X--button functionality
+X--led indicator
+
+-dedicated platform mount for rpi and arduino
+--3d print rack mount maybe (same slot as old motherboard)
+
+-rewrite base_station.py
+X--modularize code
+X---seperate relevant codeblocks into seperate classes/files
+--create front end gui
+---controls mode, displays robot data
+---modular code to add or remove data fields (like blocks that stack, doesnt have to be pretty rn)
+--develop windows .exe functionality
+
+-rpi development
+--ros instance
+--rpi camera functionality
+--rpi shield
+---acceleromater, magnetometer
+---button and led system to control/indicate rpi status
+
+Current assigned tasks:
+
+RPI Python
+X-threaded socket
+ --in network class (with queue)
+-threaded serial in serial comms class (with queue)
+-main thread that handles queues
+-P3-DX robot file
+-sound tied to aux port maybe?
+-controller buttons play songs
+X-comments throughout
+
+Arduino
+-PID eeprom
+X-buttons
+X--reset motor override
+X--aux 1, 2 serial commands (need to do threading first to use it properly)
+-battery sensor command
+X-button function
+X-buzzer (freq command) and LEDs (pulse, on, off commands)
+
+Base Python
+-button to switch between tank and mix
+X-clean up code
+X--controller library/thread
+X--network, commands file
+-comments throughout
+-tkinter interface
+--gamepad selection, display buttons pressed
+--drive mode (tank, stick)
+--send/receive screen
+--open server to clients
+---accept/deny socket connections
+--close open socket
+
+Extras
+-queue object for threads (fifo, pop, add)

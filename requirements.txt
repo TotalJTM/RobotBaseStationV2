@@ -1,0 +1,5 @@
+asyncio==3.4.3
+websockets==9.1
+gamepad==0.1.1
+inputs==0.5
+tk==0.1.0
